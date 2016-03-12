@@ -46,6 +46,7 @@ public class ManageMessages {
             message.setText(message.getText() + " UPDATED 1");
             Message message2 = session.load(Message.class, nextMessageId);
             Message message3 = new Message("Its three!");
+            session.save(message3);
 
             message.setNextMessage(message2);
             message2.setNextMessage(message3);

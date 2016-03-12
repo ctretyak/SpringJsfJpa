@@ -1,11 +1,22 @@
 package com.ctretyak.hibernate;
 
+import javax.persistence.*;
+
 /**
  * Created by ctretyak on 12.03.2016.
  */
+@Entity
+@Table(name = "messages")
 public class Message {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "message_id")
     private Integer id;
+
+    @Column(name = "message_text")
     private String text;
+
+    @ManyToOne
+    @JoinColumn(name = "next_message_id")
     private Message nextMessage;
 
     public Message() {
