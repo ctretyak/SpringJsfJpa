@@ -22,6 +22,15 @@ public class Message {
     public Message() {
     }
 
+    @Override
+    public String toString() {
+        return "Message{" +
+                "id=" + id +
+                ", text='" + text + '\'' +
+                ", nextMessage=" + nextMessage +
+                '}';
+    }
+
     public Message(String text) {
         this.text = text;
     }
